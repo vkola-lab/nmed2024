@@ -1,0 +1,1620 @@
+[features]
+
+	[feature.his_NACCREAS]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_NACCREFR]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_SEX]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_HISPANIC]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_HISPOR]
+	type = "categorical"
+	num_categories = 8
+
+	[feature.his_RACE]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.his_RACESEC]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.his_RACETER]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.his_PRIMLANG]
+	type = "categorical"
+	num_categories = 7
+
+	[feature.his_MARISTAT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.his_LIVSIT]
+	type = "categorical"
+	num_categories = 5
+
+	[feature.his_INDEPEND]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.his_RESIDENC]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.his_HANDED]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_NACCNIHR]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.his_NACCFAM]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_NACCMOM]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_NACCDAD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_NACCFADM]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_NACCAM]
+	type = "categorical"
+	num_categories = 5
+
+	[feature.his_NACCAMS]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.his_NACCFFTD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_NACCFM]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.his_NACCFMS]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.his_NACCOM]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_NACCOMS]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.his_TOBAC30]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_TOBAC100]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_ALCOCCAS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_ALCFREQ]
+	type = "categorical"
+	num_categories = 5
+
+	[feature.his_CVHATT]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_HATTMULT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_CVAFIB]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVANGIO]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVBYPASS]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVPACDEF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVPACE]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVCHF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVANGINA]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVHVALVE]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CVOTHR]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_CBSTROKE]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_STROKMUL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_CBTIA]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TIAMULT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_PD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_PDOTHR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_SEIZURES]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TBI]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TBIBRIEF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TRAUMBRF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TBIEXTEN]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TRAUMEXT]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TBIWOLOS]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_TRAUMCHR]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_NCOTHR]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_DIABETES]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_DIABTYPE]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_HYPERTEN]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_HYPERCHO]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_B12DEF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_THYROID]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_ARTHRIT]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_ARTHTYPE]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_ARTHUPEX]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_ARTHLOEX]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_ARTHSPIN]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_ARTHUNK]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_INCONTU]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_INCONTF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_APNEA]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_RBD]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_INSOMN]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_OTHSLEEP]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_ALCOHOL]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_ABUSOTHR]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_PTSD]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_BIPOLAR]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_SCHIZ]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_DEP2YRS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_DEPOTHR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_ANXIETY]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_OCD]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_NPSYDEV]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_PSYCDIS]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_NACCTBI]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_ANYMEDS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCAHTN]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCHTNC]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCACEI]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCAAAS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCBETA]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCCCBS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCDIUR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCVASD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCANGI]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCLIPL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCNSD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCAC]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCADEP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCAPSY]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCAANX]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCADMD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCPDMD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCEMD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCEPMD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.med_NACCDBMD]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.ph_VISION]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.ph_VISCORR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.ph_VISWCORR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.ph_HEARING]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.ph_HEARAID]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.ph_HEARWAID]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_ABRUPT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_STEPWISE]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_SOMATIC]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_EMOT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_HXHYPER]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_HXSTROKE]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_FOCLSYM]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_FOCLSIGN]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_CVDCOG]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_STROKCOG]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_CVDIMAG]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_CVDIMAG1]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_CVDIMAG2]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_CVDIMAG3]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.cvd_CVDIMAG4]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.updrs_PDNORMAL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.updrs_SPEECH]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_FACEXP]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRESTFAC]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRESTRHD]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRESTLHD]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRESTRFT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRESTLFT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRACTRHD]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TRACTLHD]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_RIGDNECK]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_RIGDUPRT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_RIGDUPLF]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_RIGDLORT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_RIGDLOLF]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TAPSRT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_TAPSLF]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_HANDMOVR]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_HANDMOVL]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_HANDALTR]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_HANDALTL]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_LEGRT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_LEGLF]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_ARISING]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_POSTURE]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_GAIT]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_POSSTAB]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.updrs_BRADYKIN]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.npiq_NPIQINF]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.npiq_DEL]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_HALL]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_AGIT]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_DEPD]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_ANX]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_ELAT]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_APA]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_DISN]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_IRR]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_MOT]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_NITE]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.npiq_APP]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.gds_NOGDS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_SATIS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_DROPACT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_EMPTY]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_BORED]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_SPIRITS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_AFRAID]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_HAPPY]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_HELPLESS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_STAYHOME]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_MEMPROB]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_WONDRFUL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_WRTHLESS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_ENERGY]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_HOPELESS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.gds_BETTER]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.faq_BILLS]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_TAXES]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_SHOPPING]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_GAMES]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_STOVE]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_MEALPREP]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_EVENTS]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_PAYATTN]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_REMDATES]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.faq_TRAVEL]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.exam_NACCNREX]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_NORMEXAM]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.exam_FOCLDEF]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_GAITDIS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_EYEMOVE]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_PARKSIGN]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_RESTTRL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_RESTTRR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_SLOWINGL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_SLOWINGR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_RIGIDL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_RIGIDR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_BRADY]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_PARKGAIT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_POSTINST]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CVDSIGNS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CORTDEF]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_SIVDFIND]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CVDMOTL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CVDMOTR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CORTVISL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CORTVISR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_SOMATL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_SOMATR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_POSTCORT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_PSPCBS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_EYEPSP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_DYSPSP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_AXIALPSP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_GAITPSP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_APRAXSP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_APRAXL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_APRAXR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CORTSENL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_CORTSENR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_ATAXL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_ATAXR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_ALIENLML]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_ALIENLMR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_DYSTONL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_DYSTONR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_MYOCLLT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_MYOCLRT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_ALSFIND]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_GAITNPH]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.exam_OTHNEUR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MMSECOMP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MMSELOC]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_MMSELAN]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_MMSEVIS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MMSEHEAR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_NPSYCLOC]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_NPSYLAN]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_UDSBENRS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_COGSTAT]
+	type = "categorical"
+	num_categories = 5
+
+	[feature.bat_MODCOMM]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_MOCACOMP]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAREAS]
+	type = "categorical"
+	num_categories = 4
+
+	[feature.bat_MOCALOC]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_MOCALAN]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_MOCAVIS]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAHEAR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_CRAFTCUE]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPVAL]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.bat_RESPHEAR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPDIST]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPINTR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPDISN]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPFATG]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPEMOT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPASST]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_RESPOTH]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.apoe_NACCNE4S]
+	type = "categorical"
+	num_categories = 3
+
+	[feature.his_BIRTHMO]
+	type = "categorical"
+	num_categories = 13
+
+	[feature.his_PACKSPER]
+	type = "categorical"
+	num_categories = 6
+
+	[feature.bat_PENTAGON]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_LOGIMO]
+	type = "categorical"
+	num_categories = 13
+
+	[feature.bat_LOGIDAY]
+	type = "categorical"
+	num_categories = 32
+
+	[feature.bat_MOCATRAI]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCACUBE]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCACLOC]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCACLON]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCACLOH]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCALETT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAFLUE]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAORDT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAORMO]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAORYR]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAORDY]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAORPL]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.bat_MOCAORCT]
+	type = "categorical"
+	num_categories = 2
+
+	[feature.his_BIRTHYR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_EDUC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_NACCAGE]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_SMOKYRS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_QUITSMOK]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_HATTYEAR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_NACCSTYR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_NACCTIYR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_PDYR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_PDOTHRYR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.his_TBIYEAR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.med_NACCAMD]
+	type = "numerical"
+	shape = [1]
+
+	[feature.ph_HEIGHT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.ph_WEIGHT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.ph_NACCBMI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.ph_BPSYS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.ph_BPDIAS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.ph_HRATE]
+	type = "numerical"
+	shape = [1]
+
+	[feature.cvd_HACHIN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.gds_NACCGDS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MMSEORDA]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MMSEORLO]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_NACCMMSE]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_LOGIYR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_LOGIPREV]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_LOGIMEM]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MEMUNITS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MEMTIME]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSBENTC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSBENTD]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGIF]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGIFLEN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGIB]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGIBLEN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_ANIMALS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_VEG]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_TRAILA]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_TRAILARR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_TRAILALI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_TRAILB]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_TRAILBRR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_TRAILBLI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_WAIS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_BOSTON]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERFC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERFN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERNF]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERLC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERLR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERLN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERTN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERTE]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_UDSVERTI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCATOTS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_NACCMOCA]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCANAMI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCAREGI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCADIGI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCASER7]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCAREPE]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCAABST]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCARECN]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCARECC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCARECR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_CRAFTVRS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_CRAFTURS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGFORCT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGFORSL]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGBACCT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_DIGBACLS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_CRAFTDVR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_CRAFTDRE]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_CRAFTDTI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MINTTOTS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MINTTOTW]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MINTSCNG]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MINTSCNC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MINTPCNG]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MINTPCNC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_MOCBTOTS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_NACCMOCB]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY1REC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY1INT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY2REC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY2INT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY3REC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY3INT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY4REC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY4INT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY5REC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY5INT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY6REC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REY6INT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_OTRAILA]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_OTRLARR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_OTRLALI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_OTRAILB]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_OTRLBRR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_OTRLBLI]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REYDREC]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REYDINT]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REYTCOR]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_REYFPOS]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_VNTTOTW]
+	type = "numerical"
+	shape = [1]
+
+	[feature.bat_VNTPCNC]
+	type = "numerical"
+	shape = [1]
+
+[labels]
+
+	[label.NC]
+	type = "categorical"
+	num_categories = 2
+
+	[label.MCI]
+	type = "categorical"
+	num_categories = 2
+
+	[label.DE]
+	type = "categorical"
+	num_categories = 2
+
+	[label.AD]
+	type = "categorical"
+	num_categories = 2
+
+	[label.LBD]
+	type = "categorical"
+	num_categories = 2
+
+	[label.VD]
+	type = "categorical"
+	num_categories = 2
+
+	[label.PRD]
+	type = "categorical"
+	num_categories = 2
+
+	[label.FTD]
+	type = "categorical"
+	num_categories = 2
+
+	[label.NPH]
+	type = "categorical"
+	num_categories = 2
+
+	[label.SEF]
+	type = "categorical"
+	num_categories = 2
+
+	[label.PSY]
+	type = "categorical"
+	num_categories = 2
+
+	[label.TBI]
+	type = "categorical"
+	num_categories = 2
+
+	[label.ODE]
+	type = "categorical"
+	num_categories = 2
+

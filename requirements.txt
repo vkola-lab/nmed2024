@@ -1,0 +1,9 @@
+icecream
+monai
+numpy
+scikit_learn
+scipy
+torch
+torchvision
+tqdm
+wandb

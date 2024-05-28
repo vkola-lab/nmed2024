@@ -1,0 +1,51 @@
+{
+  "Demographic Information": {
+    "BIRTHMO": "Birth month",
+    "BIRTHYR": "Birth year",
+    "SEX": "Gender",
+    "HISPANIC": "Hispanic or Latino origin",
+    "RACE": "Racial background",
+    "PRIMLANG": "Primary language",
+    "EDUC": "Level of education"
+  },
+  "Health Factors": {
+    "ALCOCCAS": "Alcohol consumption",
+    "ALCFREQ": "Frequency of alcohol use",
+    "SMOKYRS": "Years of smoking",
+    "PACKSPER": "Packs smoked per year",
+    "QUITSMOK": "Smoking cessation"
+  },
+  "Medical Conditions": {
+    "DIABETES": "Diabetes status",
+    "HYPERTEN": "Hypertension",
+    "DEP2YRS": "Depression in the last two years",
+    "ANXIETY": "Anxiety",
+    "INSOMN": "Insomnia"
+  },
+  "Neurological and Cognitive Factors": {
+    "PD": "Parkinson's Disease",
+    "SEIZURES": "History of seizures",
+    "TBI": "Traumatic brain injury",
+    "NACCMOCB": "Montreal Cognitive Assessment (MoCA) total score",
+    "NACCGDS": "Global Deterioration Scale"
+  },
+  "Physical Measurements": {
+    "HEIGHT": "Height",
+    "WEIGHT": "Weight",
+    "BPSYS": "Blood pressure (systolic)",
+    "BPDIAS": "Blood pressure (diastolic)",
+    "HRATE": "Heart rate"
+  },
+  "Behavioral and Psychological Factors": {
+    "ABUSOTHR": "Abuse of other substances",
+    "PTSD": "Post-Traumatic Stress Disorder",
+    "NPSYDEV": "Neuropsychiatric symptoms",
+    "APNEA": "Sleep apnea"
+  },
+  "Functional Assessment": {
+    "INDEPEND": "Independence status",
+    "LIVSIT": "Living situation",
+    "INCONTU": "Urinary incontinence (Urge)",
+    "INCONTF": "Urinary incontinence (Functional)"
+  }
+}
