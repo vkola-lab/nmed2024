@@ -1,7 +1,7 @@
 # AI-based differential diagnosis of dementia etiologies on multimodal data
 
 <i>
-Chonghua Xue*, Sahana S. Kowshik*, Diala Lteif, Shreyas Puducheri, Olivia T. Zhou, Anika S. Walia, Osman B. Guney, J. Diana Zhang, Serena T. Pham, Artem Kaliaev, V. Carlota Andreu-Arasa, Brigid C. Dwyer, Chad W. Farris, Honglin Hao, Sachin Kedar, Asim Z. Mian, Daniel L. Murman, Sarah A. O'Shea, Aaron B. Paul, Saurabh Rohatgi, Marie-Helene Saint-Hilaire, Emmett A. Sartor, Bindu N. Setty, Juan E. Small, Arun Swaminathan, Olga Taraschenko, Jing Yuan, Yan Zhou, Shuhan Zhu, Cody Karjadi, Ting Fang Alvin Ang, Sarah A. Bargal, Bryan A. Plummer, Kathleen L. Poston, Meysam Ahangaran, Rhoda Au & Vijaya B. Kolachalama
+Chonghua Xue*, Sahana S. Kowshik*, Diala Lteif, Shreyas Puducheri, Varuna H. Jasodanand, Olivia T. Zhou, Anika S. Walia, Osman B. Guney, J. Diana Zhang, Serena T. Pham, Artem Kaliaev, V. Carlota Andreu-Arasa, Brigid C. Dwyer, Chad W. Farris, Honglin Hao, Sachin Kedar, Asim Z. Mian, Daniel L. Murman, Sarah A. O'Shea, Aaron B. Paul, Saurabh Rohatgi, Marie-Helene Saint-Hilaire, Emmett A. Sartor, Bindu N. Setty, Juan E. Small, Arun Swaminathan, Olga Taraschenko, Jing Yuan, Yan Zhou, Shuhan Zhu, Cody Karjadi, Ting Fang Alvin Ang, Sarah A. Bargal, Bryan A. Plummer, Kathleen L. Poston, Meysam Ahangaran, Rhoda Au & Vijaya B. Kolachalama
 <br/>
 *equal contribution
 </i>
