@@ -1,8 +1,6 @@
 # AI-based differential diagnosis of dementia etiologies on multimodal data
 
-<i>
-This work is published in *Nature Medicine* (https://doi.org/10.1038/s41591-024-03118-z).
-</i>
+This work is published in _Nature Medicine_ (https://doi.org/10.1038/s41591-024-03118-z).
 
 ## Introduction
 
