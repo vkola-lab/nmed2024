@@ -10,3 +10,9 @@ All data used in this study should be available free of charge upon request from
 
 We have provided the patient IDs used for this study to reproduce our results.
 
+## Steps to use the pre-trained model checkpoint with the downloaded datasets
+To maintain data consistency, we have converted all the datasets to the [Uniform Data Set (UDS)](https://github.com/vkola-lab/nmed2024/tree/main/data/datasets/example_conversion_scripts/UDS_v3.pdf) format. Example scripts are provided to help you convert the downloaded datasets to this required format.
+
+Please refer to [FHS conversion script](https://github.com/vkola-lab/nmed2024/tree/main/data/datasets/example_conversion_scripts/fhs_to_uds.ipynb) or [ADNI conversion script](https://github.com/vkola-lab/nmed2024/tree/main/data/datasets/example_conversion_scripts/adni_to_uds.py) for converting the datasets to UDS format. Before testing the pre-trained model checkpoint, please use the [uds_to_model_input.pkl](https://github.com/vkola-lab/nmed2024/tree/main/data/datasets/example_conversion_scripts/uds_to_model_input.pkl) dictionary to convert the dataset to the required format.
+
+We have also open sourced our final model checkpoint on [Hugging Face](https://huggingface.co/spaces/vkola-lab/nmed2024). 

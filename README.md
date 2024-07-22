@@ -109,3 +109,16 @@ To make our deep learning framework for differential dementia diagnosis more acc
 [1] Tang, Y., Yang, D., Li, W., Roth, H.R., Landman, B., Xu, D., Nath, V. and Hatamizadeh, A., 2022. Self-supervised pre-training of swin transformers for 3d medical image analysis. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 20730-20740).
 
 [2] Hoopes, A., Mora, J.S., Dalca, A.V., Fischl, B. and Hoffmann, M., 2022. SynthStrip: Skull-stripping for any brain image. NeuroImage, 260, p.119474.
+
+
+## Citation
+<pre>
+@article{xue2024ai,
+  title={AI-based differential diagnosis of dementia etiologies on multimodal data},
+  author={Xue, Chonghua and Kowshik, Sahana S and Lteif, Diala and Puducheri, Shreyas and Jasodanand, Varuna H and Zhou, Olivia T and Walia, Anika S and Guney, Osman B and Zhang, J Diana and Pham, Serena T and others},
+  journal={Nature Medicine},
+  pages={1--13},
+  year={2024},
+  publisher={Nature Publishing Group US New York}
+}
+</pre>
