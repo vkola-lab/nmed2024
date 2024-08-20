@@ -50,8 +50,6 @@ def parser():
         help='Please specify path to the testing data.')
     parser.add_argument('--cnf_file', default='/home/skowshik/ADRD_repo/adrd_tool/dev/data/toml_files/default_nacc_revised_labels.toml', type=str,
         help='Please specify path to the configuration file.')
-    parser.add_argument('--emb_path', default='/data_1/dlteif/SwinUNETR_MRI_stripped_emb/', type=str,
-        help='Please specify path to the embeddings.')
     parser.add_argument('--img_mode', type=int, choices=[-1, 0, 1, 2])
     parser.add_argument('--img_net', type=str, choices=['ViTAutoEnc', 'ViTEMB', 'DenseNet', 'DenseNetEMB', 'SwinUNETR', 'SwinUNETREMB', 'NonImg'])
     parser.add_argument('--imgnet_ckpt', type=str, help="Path to Imaging model checkpoint")
@@ -80,7 +78,6 @@ def parser():
         help='Please specify the learning rate')
     parser.add_argument('--gamma', default=2, type=float,
         help='Please specify the gamma value for the focal loss')
-    parser.add_argument('--mri_type', type=str, choices=['SEQ', 'ALL'], help="SEQ: sequence specific, ALL: sequence independent")
     parser.add_argument('--weight_decay', default=0.0, type=float,
         help='Please specify the weight decay (optional)')
     args = parser.parse_args()
@@ -92,14 +89,10 @@ def parser():
 args = parser()
 img_size = eval(args.img_size)
 print(f"Image backbone: {args.img_net}")
-print(f"Embedding path: {args.emb_path}")
 if args.img_net == 'None':
     args.img_net = None
     
-# other_path = '/projectnb/ivc-ml/dlteif/Raw_MRIs'
-other_path = '/SeaExpCIFS/Raw_MRIs/ALL_nii'
-nacc_mri_info = "dev/nacc_mri_3d.json"
-other_mri_info = "dev/other_3d_mris.json"
+
 
 save_path = '/'.join(args.ckpt_path.split('/')[:-1])
 if not os.path.exists(save_path):
@@ -178,11 +171,11 @@ vld_filter_transform = FilterImages(dat_type='vld')
 seed = 0
 stripped = '_stripped_MNI'
 print("Loading training dataset ... ")
-dat_trn = CSVDataset(dat_file=args.train_path, cnf_file=args.cnf_file, mode=0, img_mode=args.img_mode, mri_type=args.mri_type, arch=args.img_net, emb_path=args.emb_path, nacc_mri_info=nacc_mri_info, other_mri_info=other_mri_info, transforms=FilterImages('trn'), stripped=stripped)
+dat_trn = CSVDataset(dat_file=args.train_path, cnf_file=args.cnf_file, mode=0, img_mode=args.img_mode, arch=args.img_net, transforms=FilterImages('trn'), stripped=stripped)
 print("Done.\nLoading Validation dataset ...")
-dat_vld = CSVDataset(dat_file=args.vld_path, cnf_file=args.cnf_file, mode=1, img_mode=args.img_mode, mri_type=args.mri_type, arch=args.img_net, emb_path=args.emb_path, nacc_mri_info=nacc_mri_info, other_mri_info=other_mri_info, transforms=FilterImages('vld'), stripped=stripped)
+dat_vld = CSVDataset(dat_file=args.vld_path, cnf_file=args.cnf_file, mode=1, img_mode=args.img_mode, arch=args.img_net, transforms=FilterImages('vld'), stripped=stripped)
 print("Done.\nLoading testing dataset ...")
-dat_tst = CSVDataset(dat_file=args.test_path, cnf_file=args.cnf_file, mode=2, img_mode=args.img_mode, mri_type=args.mri_type, arch=args.img_net, emb_path=args.emb_path, nacc_mri_info=nacc_mri_info, other_mri_info=other_mri_info, transforms=FilterImages('tst'), stripped=stripped)
+dat_tst = CSVDataset(dat_file=args.test_path, cnf_file=args.cnf_file, mode=2, img_mode=args.img_mode, arch=args.img_net, transforms=FilterImages('tst'), stripped=stripped)
 # print("Done.")
 
 label_fractions = dat_trn.label_fractions

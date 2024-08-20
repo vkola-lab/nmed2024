@@ -82,20 +82,23 @@ Once a finetuned checkpoint of the imaging model is saved, navigate to the repos
 ```
 img_net="SwinUNETR"
 img_mode=2 # loads the imgnet, generates embeddings out of the MRIs input to the network, and saves them.
-mri_type=ALL
-emb_path="PATH/TO/SAVE/MRI/EMBEDDINGS"
 ```
 
 ### 2. Training the backbone transformer
 
-Once image embeddings are saved, we train the backbone transformer on the multi-modal data. 
+Once image embeddings are saved, we train the backbone transformer on the multi-modal data. Create a configuration file similar to [```default_conf_new.toml```](https://github.com/vkola-lab/nmed2024/blob/main/dev/data/toml_files/default_conf_new.toml), categorizing each feature as ```numerical```, ```categorical``` or ```imaging```. Please add the saved image embedding paths to your data file as another column and set the type of this feature as ```imaging``` in the configuration file. 
 Navigate to the repository's root directory and run ```dev/train.sh``` with the following changes in flag values:
 ```bash
-img_net="SwinUNETREMB"
+img_net="SwinUNETREMB" 
 img_mode=1 # loads MRI embeddings and not the imgnet.
-mri_type=SEQ
-emb_path="PATH/TO/SAVED/EMBEDDINGS"
 ```
+
+To train the model without imaging, please use the following flag values:
+```bash
+img_net="NonImg" 
+img_mode=-1
+```
+
 ## Evaluation
 
 All evaluation reports, including AUC-ROC curves, AUC-PR curves, confusion matrices, and detailed classification reports, were generated using the script ```dev/visualization_utils.py```.
