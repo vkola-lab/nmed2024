@@ -1,4 +1,3 @@
-from .DeIT import *
 from .dino import *
 from .vision_transformer import *
 from .embed_layer_3d_modality import VoxelEmbed, VoxelEmbed_Hybrid_no_average, \
