@@ -183,7 +183,8 @@ label_fractions = dat_trn.label_fractions
 df = pd.read_csv(args.data_path)
 
 label_distribution = {}
-for label in ['NC', 'MCI', 'DE', 'AD', 'LBD', 'VD', 'PRD', 'FTD', 'NPH', 'SEF', 'PSY', 'TBI', 'ODE']:
+cnf = toml.load(args.cnf_file)
+for label in list(cnf['label'].keys()):
     label_distribution[label] = dict(df[label].value_counts())
 ckpt_path = args.ckpt_path
 
