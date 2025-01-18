@@ -30,8 +30,6 @@ value_mapping = {
     'his_RACETER':      {'whi': 0, 'blk': 1, 'asi': 2, 'ind': 3, 'haw': 4, 'oth': 5},
 }
 
-label_names = ['NC', 'MCI', 'DE', 'AD', 'LBD', 'VD', 'PRD', 'FTD', 'NPH', 'SEF', 'PSY', 'TBI', 'ODE']
-
 class CSVDataset:
 
     def __init__(self, dat_file, cnf_file, mode=0, img_mode=0, arch=None, transforms=None, stripped=None):
