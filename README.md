@@ -101,7 +101,7 @@ img_mode=-1
 
 ## Evaluation
 
-All evaluation reports, including AUC-ROC curves, AUC-PR curves, confusion matrices, and detailed classification reports, were generated using the script ```dev/visualization_utils.py```.
+The model predictions were generated using the script ```dev/generate_predictions.py```. All AUC-ROC curves and AUC-PR curves were generated using ```plots/roc_pr_curves.py```.
 
 ## Demo
 

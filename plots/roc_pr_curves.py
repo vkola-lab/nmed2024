@@ -1,3 +1,5 @@
+# Please save the model predictions using the script `dev/generate_predictions.py` before running this script.
+
 # %%
 from sklearn.metrics import multilabel_confusion_matrix, classification_report, roc_curve, auc, confusion_matrix, \
      RocCurveDisplay, precision_score, recall_score, average_precision_score, PrecisionRecallDisplay, precision_recall_curve, roc_auc_score
@@ -208,7 +210,7 @@ def generate_pr(y_true, y_pred, features, figsize=(2.3, 2.3), figname='Average_P
 
 import pandas as pd
 import numpy as np
-# labels =['AD', 'LBD', 'VD', 'PRD', 'FTD', 'NPH', 'SEF', 'PSY', 'TBI', 'ODE']
+
 basedir = '../model_predictions_stripped_MNI_swinunetr'
 nacc = pd.read_csv(f'{basedir}/nacc_test_with_np_cli_swinunetr_prob.csv')
 adni = pd.read_csv(f'{basedir}/adni_merged_swinunetr_prob.csv')
