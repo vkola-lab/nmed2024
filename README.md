@@ -125,3 +125,6 @@ To make our deep learning framework for differential dementia diagnosis more acc
   publisher={Nature Publishing Group US New York}
 }
 </pre>
+
+## Hotfixes
+**04/15/2025:** Fixed performance degradation caused by setting `nhead` (number of attention heads) to a value greater than 1. The issue stemmed from incorrectly expanding the 0th dimension of the tensor provided to the `mask` parameter in `torch.TransformerEncoder.__call__()`.
