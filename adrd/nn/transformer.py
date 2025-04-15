@@ -201,14 +201,11 @@ class Transformer(torch.nn.Module):
         
         # concatenate source masks and target masks
         mask_all = torch.concatenate((mask_tgt, mask_src), dim=1)
-        
-        # repeat mask_all to fit transformer
-        mask_all = mask_all.unsqueeze(1).expand(-1, S + T, -1).repeat(self.nhead, 1, 1)
 
         # run transformer
         out_trf = self.transformer(
             src = emb_all,
-            mask = mask_all,
+            src_key_padding_mask = mask_all,
         )[0]
         return out_trf
 
