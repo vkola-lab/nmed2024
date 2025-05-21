@@ -139,26 +139,26 @@ class CSVDataset:
                 elif img_mode == 2: 
                     # load MRIs and use swinunetr model to get the embeddings
                     print('img_mode is 2')
-                    embedding_dict = load_mris.get_emb('filename', df, arch=arch, transforms=transforms, stripped=stripped)
+                    savedir = "./MRI_emb/"
+                    embedding_dict = load_mris.get_emb('filename', df, savedir=savedir, arch=arch, transforms=transforms, stripped=stripped)
                     mri_embeddings = []
                     for index, row in df.iterrows():
                         filename = row['filename']
                         print(filename)
                         if filename in embedding_dict:
-
                             emb = embedding_dict[filename].flatten()
                             mri_embeddings.append(emb)
+                            total += 1
                             self.cnf['feature'][fea]['shape'] = emb.shape
                             self.cnf['feature'][fea]['img_shape'] = emb.shape
                         else:
                             mri_embeddings.append(None)
-                    print(avail)
 
                     df[fea] = mri_embeddings
                     if 'img_shape' in self.cnf['feature'][fea]:
                         print(self.cnf['feature'][fea]['img_shape'])
 
-        print(f"Total mri embeddings found: {total}")
+        print(f"IMG_MODE: {img_mode}. Total mri embeddings found: {total}")
 
         for fea in img_fea_to_pop:
             self.cnf['feature'].pop(fea)

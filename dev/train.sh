@@ -16,7 +16,8 @@ train_path="${prefix}/data/train_vld_test_split_updated/demo_train.csv"
 vld_path="${prefix}/data/train_vld_test_split_updated/demo_vld.csv"
 test_path="${prefix}/data/train_vld_test_split_updated/nacc_test_with_np_cli.csv"
 cnf_file="${prefix}/dev/data/toml_files/default_conf_new.toml"
-imgnet_ckpt="${prefix}/dev/ckpt/ckpt_densenet_232_all_stripped_mni.pt"
+# imgnet_ckpt="${prefix}/dev/ckpt/ckpt_densenet_232_all_stripped_mni.pt"
+imgnet_ckpt="${prefix}/dev/ssl_mri/checkpoints/SwinUNETR128_FTenc_pretrained_cls_NC_MCI_DE_MNI_4layers_bs4/checkpoint_best.pth"
 
 
 # Note for setting the flags
@@ -41,10 +42,10 @@ img_mode=1
 # img_net="DenseNet"
 # img_mode=0
 
-ckpt_path="./dev/ckpt/ckpt_swinunetr_stripped_MNI.pt"
+ckpt_path="./dev/ckpt/debug/model.pt"
 
 # run train.py 
-python dev/train.py --data_path $data_path --train_path $train_path --vld_path $vld_path --test_path $test_path --cnf_file $cnf_file --ckpt_path $ckpt_path --d_model 256 --nhead 1 \
-                    --num_epochs 256 --batch_size 128 --lr 0.001 --gamma 0 --img_mode $img_mode --img_net $img_net --img_size "(182,218,182)" --imgnet_ckpt ${imgnet_ckpt} \
-                    --patch_size 16 --ckpt_path $ckpt_path --train_imgnet --cnf_file ${cnf_file} --train_path ${train_path} --vld_path ${vld_path} --data_path ${data_path}  \
-                    --fusion_stage middle --imgnet_layers 4 --weight_decay 0.0005 --ranking_loss --save_intermediate_ckpts  --wandb #--train_imgnet #--load_from_ckpt #--balanced_sampling
+python dev/train.py --data_path $data_path --train_path $train_path --vld_path $vld_path --test_path $test_path --cnf_file $cnf_file --d_model 256 --nhead 1 \
+                    --num_epochs 256 --batch_size 128 --lr 0.001 --gamma 0 --img_mode $img_mode --img_net $img_net --img_size "(182,218,182)" --imgnet_ckpt ${imgnet_ckpt} --imgnet_ckpt_key "backbone" \
+                    --patch_size 16 --train_imgnet --cnf_file ${cnf_file} --train_path ${train_path} --vld_path ${vld_path} --data_path ${data_path}  \
+                    --fusion_stage middle --imgnet_layers 4 --weight_decay 0.0005 --ranking_loss --save_intermediate_ckpts --ckpt_path ${ckpt_path} #--wandb #--train_imgnet #--load_from_ckpt #--balanced_sampling

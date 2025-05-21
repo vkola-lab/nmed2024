@@ -14,6 +14,7 @@ class ImagingModelWrapper(torch.nn.Module):
             img_size: int | None = 128,
             patch_size: int | None = 16,
             ckpt_path: str | None = None,
+            ckpt_key: str | None = "state_dict",
             train_backbone: bool = False,
             out_dim: int = 128,
             layers: int | None = 1,
@@ -28,6 +29,7 @@ class ImagingModelWrapper(torch.nn.Module):
         self.patch_size = patch_size
         self.train_backbone = train_backbone
         self.ckpt_path = ckpt_path
+        self.ckpt_key = ckpt_key
         self.device = device
         self.out_dim = out_dim
         self.layers = layers
@@ -36,8 +38,8 @@ class ImagingModelWrapper(torch.nn.Module):
         
         if "swinunetr" in self.arch.lower():
             if "emb" not in self.arch.lower():
-                ckpt_path = '/projectnb/ivc-ml/dlteif/pretrained_models/model_swinvit.pt'
-                ckpt = torch.load(ckpt_path, map_location='cpu')
+                print("Loading SwinUNETR model from checkpoint: ", ckpt_path, "...")
+                ckpt = torch.load(ckpt_path, map_location='cpu', weights_only=False)
                 self.img_model = SwinUNETR(
                     in_channels=1,
                     out_channels=1,
@@ -45,9 +47,15 @@ class ImagingModelWrapper(torch.nn.Module):
                     feature_size=48,
                     use_checkpoint=True,
                 )
-                ckpt["state_dict"] = {k.replace("swinViT.", "module."): v for k, v in ckpt["state_dict"].items()}
-                ic(ckpt["state_dict"].keys())
-                self.img_model.load_from(ckpt)
+                
+                try: # if loading full model from checkpoint
+                    ckpt[ckpt_key] = {k.replace("swinunetr.", ""): v for k, v in ckpt[ckpt_key].items()}
+                    self.img_model.load_state_dict(ckpt[ckpt_key])
+                except: # if only loading the pretrained swinViT model
+                    ckpt[ckpt_key] = {k.replace("swinViT.", "module."): v for k, v in ckpt[ckpt_key].items()}
+                    ic(ckpt[ckpt_key].keys())
+                    self.img_model.load_from(ckpt)
+                print("Successfully loaded.")
             self.dim = 768
 
         elif "vit" in self.arch.lower():    
@@ -61,6 +69,8 @@ class ImagingModelWrapper(torch.nn.Module):
 
                 if self.ckpt_path:
                     self.img_model.load(self.ckpt_path, map_location=self.device)
+                    print("Loaded model from checkpoint: ", ckpt_path)
+
                 self.dim = self.img_model.hidden_size
             else:
                 self.dim = 768

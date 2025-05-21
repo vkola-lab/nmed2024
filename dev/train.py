@@ -3,7 +3,9 @@
 import pandas as pd
 import torch
 import json
+import toml
 import argparse
+import sys
 import os
 import monai
 import nibabel as nib
@@ -15,7 +17,7 @@ from collections import defaultdict
 from icecream import ic, install
 install()
 ic.configureOutput(includeContext=True)
-ic.disable()
+ic.enable()
 from torchvision import transforms
 from monai.transforms import (
     LoadImaged,
@@ -36,8 +38,14 @@ from monai.transforms import (
     Resized,
 )
 
+class MyParser(argparse.ArgumentParser):
+    def error(self, message):
+        sys.stderr.write('error: %s\n' % message)
+        self.print_help()
+        sys.exit(2)
+
 def parser():
-    parser = argparse.ArgumentParser("Transformer pipeline", add_help=False)
+    parser = MyParser("Transformer pipeline", add_help=True)
 
     # Set Paths for running SSL training
     parser.add_argument('--data_path', default='/home/skowshik/ADRD_repo/adrd_tool/data/nacc_new/new_nacc_processed_revised_labels.csv', type=str,
@@ -53,13 +61,14 @@ def parser():
     parser.add_argument('--img_mode', type=int, choices=[-1, 0, 1, 2])
     parser.add_argument('--img_net', type=str, choices=['ViTAutoEnc', 'ViTEMB', 'DenseNet', 'DenseNetEMB', 'SwinUNETR', 'SwinUNETREMB', 'NonImg'])
     parser.add_argument('--imgnet_ckpt', type=str, help="Path to Imaging model checkpoint")
+    parser.add_argument('--imgnet_ckpt_key', type=str, default="state_dict", help="Key to load the imaging model checkpoint")
     parser.add_argument('--fusion_stage', type=str, default="middle", help="Fusion stage of the image embeddings")
     parser.add_argument('--train_imgnet', action="store_true", help="Set to True to train imaging model along transformer.")
     parser.add_argument("--img_size", type=str, help="input size to the imaging model")
     parser.add_argument("--imgnet_layers", type=int, default=2, help="Number of layers of the downsampling block.")
     parser.add_argument("--patch_size", type=int, help="patch size")
-    parser.add_argument('--ckpt_path', default='/home/skowshik/ADRD_repo/adrd_tool/dev/ckpt/revised_labels/ckpt.pt', type=str,
-        help='Please specify the ckpt path')
+    parser.add_argument('--ckpt_path', required=True, type=str,
+        help='Please specify the ckpt path for saving and/or loading the model. To load from this ckpt, please pass along the --load_from_ckpt flag.')
     parser.add_argument('--load_from_ckpt', action="store_true", help="Set to True to load model from checkpoint.")
     parser.add_argument('--save_intermediate_ckpts', action="store_true", help="Set to True to save intermediate model checkpoints.")
     parser.add_argument('--wandb', action="store_true", help="Set to True to init wandb logging.")
@@ -80,7 +89,7 @@ def parser():
         help='Please specify the gamma value for the focal loss')
     parser.add_argument('--weight_decay', default=0.0, type=float,
         help='Please specify the weight decay (optional)')
-    args = parser.parse_args()
+    args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
     return args
 
 # if not os.path.exists(save_path):
@@ -94,9 +103,10 @@ if args.img_net == 'None':
     
 
 
-save_path = '/'.join(args.ckpt_path.split('/')[:-1])
-if not os.path.exists(save_path):
-    os.makedirs(save_path)
+if args.ckpt_path:
+    save_path = '/'.join(args.ckpt_path.split('/')[:-1])
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
 
 def minmax_normalized(x, keys=["image"]):
     for key in keys:
@@ -207,12 +217,13 @@ mdl = ADRDModel(
     gamma = args.gamma,
     criterion = 'AUC (ROC)',
     device = 'cuda',
-    cuda_devices = [1,2],
+    cuda_devices = [0],
     img_net = args.img_net,
     imgnet_layers = args.imgnet_layers,
     img_size = img_size,
     fusion_stage= args.fusion_stage,
     imgnet_ckpt = args.imgnet_ckpt,
+    imgnet_ckpt_key = args.imgnet_ckpt_key,
     patch_size = args.patch_size,
     ckpt_path = ckpt_path,
     train_imgnet = args.train_imgnet,

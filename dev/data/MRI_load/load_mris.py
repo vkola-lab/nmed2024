@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-from adrd.nn import ImageModel
+from adrd.nn import UNet3DModel
 from icecream import ic
 import torch
 from .imgdataload import ImageDataset
@@ -60,9 +60,12 @@ def get_mri_dataloader(feature, df, transforms=None, stripped=False):
 
     return dataloader
 
-def load_model(arch):
-    ckpt_path = ckpts_dict[arch]
-    ckpt = torch.load(ckpt_path, map_location='cpu')
+def load_model(arch: str,
+               ckpt_path: str,
+               ckpt_key: str | None = "state_dict"
+               ):
+    print(f'Loading {arch} model from checkpoint: {ckpt_path} ...')
+    ckpt = torch.load(ckpt_path, map_location='cpu', weights_only=False)
     # ic(state_dict.keys())
     if arch == 'SwinUNETR':
         model = SwinUNETR(
@@ -72,8 +75,8 @@ def load_model(arch):
             feature_size=48,
             use_checkpoint=True,
         )
-        ckpt["state_dict"] = {k.replace("swinViT.", "module."): v for k, v in ckpt["state_dict"].items()}
-        ic(ckpt["state_dict"].keys())
+        ckpt[ckpt_key] = {k.replace("swinViT.", "module."): v for k, v in ckpt[key].items()}
+        ic(ckpt[key].keys())
         model.load_from(ckpt)
         class ModelWrapper(torch.nn.Module):
             def __init__(self, model, *args, **kwargs) -> None:
@@ -99,10 +102,13 @@ def load_model(arch):
                 return dec4
 
         img_model = ModelWrapper(model)
-    else:    
-        state_dict = ckpt['model_dict']
-        img_model = ImageModel(num_classes=3)
+    elif 'unet3d' in arch.lower():    
+        state_dict = ckpt[key]
+        img_model = UNet3DModel(num_classes=3)
         img_model.load_checkpoint(state_dict)
+    else:
+        raise NotImplementedError(f"Model {arch} not implemented.")
+
     return img_model
 
 def mri_emb(img_model, data):
@@ -130,15 +136,15 @@ def save_emb(feature, df):
         for data in tqdm(dataloader):
             try:
                 filename = data[0][0].split('/')[-1]
-                if os.path.exists('/home/skowshik/MRI_emb/' + filename):
+                if os.path.exists('./MRI_emb/' + filename):
                     continue
                 emb = mri_emb(img_model, data)
                 # print(emb.shape)
-                np.save('/home/skowshik/MRI_emb/' + filename, emb)
+                np.save('./MRI_emb/' + filename, emb)
             except:
                 continue
 
-def get_emb(feature, df, savedir, arch='unet3d', transforms=None, stripped=False):
+def get_emb(feature, df, savedir=None, arch='unet3d', transforms=None, stripped=False):
     print('------------get_emb()------------')
     dataloader = get_mri_dataloader(feature, df, transforms=transforms, stripped=stripped)
     img_model = load_model(arch)
@@ -146,7 +152,8 @@ def get_emb(feature, df, savedir, arch='unet3d', transforms=None, stripped=False
     img_model.to(device)
     img_model.eval()
     embeddings = {}
-    os.makedirs(savedir, exist_ok=True)
+    if savedir:
+        os.makedirs(savedir, exist_ok=True)
     with torch.no_grad():
         for fnames, data in tqdm(dataloader):
             try:
@@ -173,15 +180,17 @@ def get_emb(feature, df, savedir, arch='unet3d', transforms=None, stripped=False
                         filename = '_'.join(fname.split('/')[-3:]).replace('.nii', '.npy')
                     else:
                         filename = fname.split('/')[-1].replace('.nii', '.npy')
-                    if os.path.exists(savedir + filename):
+                    if savedir and os.path.exists(savedir + filename):
                         continue       
                     embeddings[filename] = emb[idx,:,:,:,:].cpu().detach().numpy()
-                    np.save(savedir + filename, embeddings[filename])
+                    if savedir:
+                        np.save(savedir + filename, embeddings[filename])
             except:
                 continue
     print("Embeddings saved to ", savedir)
     print("Done.")
-    exit()
+    if savedir:
+        exit()
     return embeddings
 
 

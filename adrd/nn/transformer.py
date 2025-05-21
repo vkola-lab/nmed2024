@@ -25,6 +25,7 @@ class Transformer(torch.nn.Module):
         img_size: int | None = 128,
         patch_size: int | None = 16,
         imgnet_ckpt: str | None = None,
+        imgnet_ckpt_key: str | None = 'state_dict',
         train_imgnet: bool = False,
         fusion_stage: str = 'middle',
     ) -> None:
@@ -39,6 +40,7 @@ class Transformer(torch.nn.Module):
         self.img_size = img_size
         self.patch_size = patch_size
         self.imgnet_ckpt = imgnet_ckpt
+        self.imgnet_ckpt_key = imgnet_ckpt_key
         self.train_imgnet = train_imgnet
         self.layers = layers
         self.src_modalities = src_modalities
@@ -51,8 +53,19 @@ class Transformer(torch.nn.Module):
         self.modules_emb_src = torch.nn.ModuleDict()
         if self.img_net.lower() != "nonimg":
             print('Downsample layers: ', self.layers)
-            self.img_model = nn.ImagingModelWrapper(arch=self.img_net, img_size=self.img_size, patch_size=self.patch_size, ckpt_path=self.imgnet_ckpt, train_backbone=self.train_imgnet, layers=self.layers, out_dim=self.d_model, device=self.device, fusion_stage=self.fusion_stage)
-            
+            self.img_model = nn.ImagingModelWrapper(
+                                arch=self.img_net,
+                                img_size=self.img_size,
+                                patch_size=self.patch_size,
+                                ckpt_path=self.imgnet_ckpt,
+                                ckpt_key=self.imgnet_ckpt_key,
+                                train_backbone=self.train_imgnet,
+                                layers=self.layers,
+                                out_dim=self.d_model,
+                                device=self.device,
+                                fusion_stage=self.fusion_stage
+                                )
+                    
         for k, info in src_modalities.items():
             if info['type'] == 'categorical':
                 self.modules_emb_src[k] = torch.nn.Embedding(info['num_categories'], d_model)

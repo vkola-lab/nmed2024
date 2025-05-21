@@ -83,6 +83,7 @@ class ADRDModel(BaseEstimator):
         fusion_stage: str = 'middle',
         patch_size: int | None = 16,
         imgnet_ckpt: str | None = None,
+        imgnet_ckpt_key: str | None = "state_dict",
         train_imgnet: bool = False,
         ckpt_path: str = './adrd_tool/adrd/dev/ckpt/ckpt.pt',
         load_from_ckpt: bool = False,
@@ -146,6 +147,8 @@ class ADRDModel(BaseEstimator):
         :type patch_size: int | None, optional
         :param imgnet_ckpt: _description_, defaults to None
         :type imgnet_ckpt: str | None, optional
+        :param imgnet_ckpt_key: _description_, defaults to "state_dict"
+        :type imgnet_ckpt_key: str | None, optional
         :param train_imgnet: Set to True to finetune the img_net backbone, defaults to False
         :type train_imgnet: bool, optional
         :param ckpt_path: The model checkpoint point path, defaults to './adrd_tool/adrd/dev/ckpt/ckpt.pt'
@@ -202,6 +205,7 @@ class ADRDModel(BaseEstimator):
         self.img_size = img_size
         self.fusion_stage = fusion_stage
         self.imgnet_ckpt = imgnet_ckpt
+        self.imgnet_ckpt_key = imgnet_ckpt_key
         self.imgnet_layers = imgnet_layers
         self.train_imgnet = train_imgnet
         self.ckpt_path = ckpt_path
@@ -725,6 +729,7 @@ class ADRDModel(BaseEstimator):
         state_dict['img_size'] = self.img_size
         state_dict['patch_size'] = self.patch_size
         state_dict['imgnet_ckpt'] = self.imgnet_ckpt
+        state_dict['imgnet_ckpt_key'] = self.imgnet_ckpt_key
         state_dict['train_imgnet'] = self.train_imgnet
         state_dict['epoch'] = epoch
 
@@ -769,6 +774,7 @@ class ADRDModel(BaseEstimator):
             self.img_size = state_dict.pop('img_size')
             self.patch_size = state_dict.pop('patch_size')
             self.imgnet_ckpt = state_dict.pop('imgnet_ckpt')
+            self.imgnet_ckpt_key = state_dict.pop('imgnet_ckpt_key')
             self.train_imgnet = state_dict.pop('train_imgnet')
         else:
             self.img_net  = img_dict['img_net']
@@ -776,12 +782,14 @@ class ADRDModel(BaseEstimator):
             self.img_size  = img_dict['img_size']
             self.patch_size  = img_dict['patch_size']
             self.imgnet_ckpt  = img_dict['imgnet_ckpt']
+            self.imgnet_ckpt_key  = img_dict['imgnet_ckpt_key']
             self.train_imgnet  = img_dict['train_imgnet']
             state_dict.pop('img_net')
             state_dict.pop('imgnet_layers')
             state_dict.pop('img_size')
             state_dict.pop('patch_size')
             state_dict.pop('imgnet_ckpt')
+            state_dict.pop('imgnet_ckpt_key')
             state_dict.pop('train_imgnet')
             
         for k, info in self.src_modalities.items():
@@ -794,7 +802,22 @@ class ADRDModel(BaseEstimator):
                     info['img_shape'] = (1, 768, 4, 4, 4)
                 # print(info['shape'])
 
-        self.net_ = Transformer(self.src_modalities, self.tgt_modalities, self.d_model, self.nhead, self.num_encoder_layers, self.num_decoder_layers, self.device, self.cuda_devices, self.img_net, self.imgnet_layers, self.img_size, self.patch_size, self.imgnet_ckpt, self.train_imgnet, self.fusion_stage)
+        self.net_ = Transformer(self.src_modalities, 
+                        self.tgt_modalities,
+                        self.d_model,
+                        self.nhead,
+                        self.num_encoder_layers,
+                        self.num_decoder_layers,
+                        self.device,
+                        self.cuda_devices,
+                        self.img_net,
+                        self.imgnet_layers,
+                        self.img_size,
+                        self.patch_size,
+                        self.imgnet_ckpt,
+                        self.imgnet_ckpt_key,
+                        self.train_imgnet,
+                        self.fusion_stage)
 
        
         if 'scaler' in state_dict and state_dict['scaler']:
@@ -868,7 +891,8 @@ class ADRDModel(BaseEstimator):
                 layers = self.imgnet_layers, 
                 img_size = self.img_size, 
                 patch_size = self.patch_size, 
-                imgnet_ckpt = self.imgnet_ckpt, 
+                imgnet_ckpt = self.imgnet_ckpt,
+                imgnet_ckpt_key = self.imgnet_ckpt_key, 
                 train_imgnet = self.train_imgnet,
                 fusion_stage = self.fusion_stage,
             )  
@@ -884,6 +908,8 @@ class ADRDModel(BaseEstimator):
         if self.data_parallel and torch.cuda.device_count() > 1:
             print("Available", torch.cuda.device_count(), "GPUs!")
             self.net_ = torch.nn.DataParallel(self.net_, device_ids=self.cuda_devices)
+        else:
+            self.data_parallel = False
 
         # return net
 
@@ -955,7 +981,7 @@ class ADRDModel(BaseEstimator):
             T_0=64,
             T_mult=2,
             eta_min = 0,
-            verbose=(self.verbose > 2)
+            #verbose=(self.verbose > 2)
         )
     
     def _init_loss_func(self, 
