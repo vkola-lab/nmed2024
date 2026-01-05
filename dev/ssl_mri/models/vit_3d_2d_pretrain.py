@@ -12,7 +12,6 @@ from .vision_transformer import VisionTransformer
 from torch import nn
 from einops import rearrange, repeat
 from functools import partial
-from .DeIT import *
 
 def fit_dict(input_dict):
     """Fix name mismatch
