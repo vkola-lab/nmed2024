@@ -101,7 +101,14 @@ img_mode=-1
 
 ## Evaluation
 
-The model predictions were generated using the script ```dev/generate_predictions.py```. All AUC-ROC curves and AUC-PR curves were generated using ```plots/roc_pr_curves.py```.
+To generate predictions with the pretrained ADRD model:
+
+1. Download [`ckpt_swinunetr_stripped_MNI.pt`](https://github.com/vkola-lab/ncomms2025/blob/main/nmedckpt/ckpt_swinunetr_stripped_MNI.pt).
+2. In [`dev/generate_predictions.py`](dev/generate_predictions.py), set `ckpt_path` to the local path of the downloaded file and `dat_file` to the path of your test CSV.
+
+This is the checkpoint for the full ADRD prediction model. `model_swinvit.pt` is for the MRI encoder and is not a substitute for the ADRD checkpoint.
+
+All AUC-ROC curves and AUC-PR curves were generated using `plots/roc_pr_curves.py`.
 
 ## Demo
 
