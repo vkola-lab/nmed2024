@@ -111,7 +111,6 @@ def save_predictions(dat_tst, test_file, scores_proba, scores, save_path=None, f
             df = pd.concat([id_df, y_true_df, scores_proba_df, cdr_df], axis=1)
         else:
             df = pd.concat([id_df, y_true_df, scores_proba_df], axis=1)
-    print(len(y_true_df), len(scores_df), len(scores_proba_df), len(cdr_df), len(id_df))
     if if_save:
         df.to_csv(save_path + filename, index=False)
         
@@ -137,7 +136,7 @@ def generate_performance_report(dat_tst, y_pred, scores_proba):
 
     return met
 
-def generate_predictions_for_data_file(dat_file, labels, tst_filter_transform=None):
+def generate_predictions_for_data_file(dat_file, tst_filter_transform=None):
     # initialize datasets
     seed = 0
     print('Done.\nLoading testing dataset ...')
@@ -236,7 +235,7 @@ if __name__ == '__main__':
         tst_filter_transform = None
         
     # 1. Generate predictions for a test case file
-    df_pred, met = generate_predictions_for_data_file(dat_file, labels, tst_filter_transform)
+    df_pred, met = generate_predictions_for_data_file(dat_file, tst_filter_transform=tst_filter_transform)
     #%%
     met_df = pd.DataFrame(met)
     met_df.to_csv(save_path + f'{fname}_performance_report.pdf', index=False)
